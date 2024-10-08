@@ -30,6 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 197, 196, 196),
         title: const Text('Meine Bildergalerie'),
         actions: [
           IconButton(
@@ -45,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color.fromARGB(255, 197, 196, 196),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.image),

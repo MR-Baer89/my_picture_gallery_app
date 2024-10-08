@@ -28,7 +28,6 @@ class ImageDetailPage extends StatelessWidget {
               const SizedBox(height: 4),
               Text(image.imageDescription),
               const SizedBox(height: 8),
-              // Tags anzeigen
               if (image.tags.isNotEmpty)
                 Wrap(
                   spacing: 8,

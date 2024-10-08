@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_picture_gallery_app/gallery_data.dart';
 import 'package:my_picture_gallery_app/image_detail_page.dart';
-import 'package:my_picture_gallery_app/main.dart';
 
 class ImageSearchDelegate extends SearchDelegate {
   final List<GalleryItem> galleryData;
