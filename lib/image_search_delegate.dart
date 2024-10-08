@@ -57,7 +57,11 @@ class ImageSearchDelegate extends SearchDelegate {
           child: Card(
             child: Column(
               children: [
-                Image.asset(item.imagePath),
+                SizedBox(
+                  width: 160,
+                  height: 160,
+                  child: Image.asset(item.imagePath, fit: BoxFit.cover),
+                ),
                 Text(item.imageTitle),
                 Text(item.imageDate),
               ],
