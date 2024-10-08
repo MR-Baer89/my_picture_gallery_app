@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   final List<Widget> _screens = [
-    const ImageGallery(),
+    ImageGallery(galleryData: galleryData), // Pass galleryData as an argument
     const ProfilePage(),
     // ... andere Screens hinzufügen (z.B. Profilseite)
   ];
@@ -79,22 +79,13 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class ImageGallery extends StatelessWidget {
-  const ImageGallery({super.key});
+  final List<GalleryItem> galleryData;
+
+  const ImageGallery({super.key, required this.galleryData});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Meine Bildergalerie'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {
-              // Implement Search functionality
-            },
-          ),
-        ],
-      ),
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
@@ -104,36 +95,15 @@ class ImageGallery extends StatelessWidget {
         itemCount: galleryData.length,
         itemBuilder: (context, index) {
           final item = galleryData[index];
-          return GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(
-                context,
-                '/imageDetail',
-                arguments: item,
-              );
-            },
-            child: Card(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Image(image: AssetImage('assets/images/')),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(item.imageTitle),
-                        Text(item.imageDate),
-                        Row(
-                          children: item.tags
-                              .map((tag) => Chip(label: Text(tag)))
-                              .toList(),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+          return Card(
+            child: Column(
+              children: [
+                // Use Image.asset for local images
+                Image.asset(item.imagePath),
+                Text(item.imageTitle),
+                Text(item.imageDate),
+                // ... weitere Informationen
+              ],
             ),
           );
         },
@@ -143,24 +113,50 @@ class ImageGallery extends StatelessWidget {
 }
 
 class ImageDetailPage extends StatelessWidget {
-  const ImageDetailPage({super.key});
+  final GalleryItem image;
+
+  const ImageDetailPage({super.key, required this.image});
 
   @override
   Widget build(BuildContext context) {
-    final GalleryItem image =
-        ModalRoute.of(context)!.settings.arguments as GalleryItem;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(image.imageTitle),
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(image.imagePath),
+            // Große Bildansicht
+            Image.network(
+              image.imagePath,
+              fit: BoxFit.cover,
+            ),
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Text(image.imageDescription),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Datum:${image.imageDate}',
+                      style: Theme.of(context).textTheme.bodySmall),
+                  const SizedBox(height: 8),
+                  Text('Beschreibung:',
+                      style: Theme.of(context).textTheme.titleMedium),
+                  const SizedBox(height: 4),
+                  Text(image.imageDescription),
+                  const SizedBox(height: 8),
+                  // Tags anzeigen
+                  if (image.tags.isNotEmpty)
+                    Wrap(
+                      spacing: 8,
+                      children: image.tags.map((tag) {
+                        return Chip(
+                          label: Text(tag),
+                        );
+                      }).toList(),
+                    ),
+                ],
+              ),
             ),
           ],
         ),
