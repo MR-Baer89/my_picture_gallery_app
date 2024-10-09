@@ -10,6 +10,7 @@ class ImageDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 197, 196, 196),
         title: Text(image.imageTitle),
       ),
       body: SingleChildScrollView(
