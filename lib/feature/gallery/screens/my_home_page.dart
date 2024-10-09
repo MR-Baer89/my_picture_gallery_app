@@ -30,9 +30,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 197, 196, 196),
+        backgroundColor: const Color.fromARGB(255, 99, 13, 145),
         title: const Text(
           'Meine Bildergalerie',
+          style: TextStyle(color: Colors.white),
         ),
         actions: [
           IconButton(
