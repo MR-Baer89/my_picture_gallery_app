@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_picture_gallery_app/gallery_data.dart';
-import 'package:my_picture_gallery_app/image_gallery.dart';
-import 'package:my_picture_gallery_app/profile_page.dart';
+import 'package:my_picture_gallery_app/widgets/gallery_data.dart';
+import 'package:my_picture_gallery_app/screens/image_gallery.dart';
+import 'package:my_picture_gallery_app/screens/profile_page.dart';
 
-import 'image_search_delegate.dart';
+import '../widgets/image_search_delegate.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
