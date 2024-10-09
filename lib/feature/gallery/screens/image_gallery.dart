@@ -28,6 +28,7 @@ class ImageGallery extends StatelessWidget {
             );
           },
           child: Card(
+            shadowColor: Colors.blueGrey,
             child: Column(
               children: [
                 SizedBox(

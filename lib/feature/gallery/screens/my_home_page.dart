@@ -31,7 +31,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 197, 196, 196),
-        title: const Text('Meine Bildergalerie'),
+        title: const Text(
+          'Meine Bildergalerie',
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
