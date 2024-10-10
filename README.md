@@ -9,15 +9,17 @@ Diese Flutter-App dient zur Anzeige und Verwaltung einer Bildergalerie. Sie erm�
 Funktionen:
 
 Bilderanzeige: Zeigt Bilder in einer gewünschten Gitteransicht an.
+
 Alben: Organisiert Bilder in verschiedenen Alben.
+
 Suchfunktion: Ermöglicht das schnelle Finden von Bildern nach verschiedenen Faktoren (zB Datum, Tags).
 Bildbearbeitung (optional): Bietet grundlegende Bildbearbeitungsfunktionen wie Zuschneiden, Drehen und Filtern.
+
 Teilen: Ermöglicht das Teilen von Bildern über verschiedene Plattformen.
 
 Technische Details
 
 Programmiersprache: Dart
-
 Framework: Flutter
 
 
