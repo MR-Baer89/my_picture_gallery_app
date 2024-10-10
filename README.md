@@ -13,7 +13,9 @@ Bildbearbeitung (optional): Bietet grundlegende Bildbearbeitungsfunktionen wie Z
 Teilen: Ermöglicht das Teilen von Bildern über verschiedene Plattformen.
 
 Technische Details
+
 Programmiersprache: Dart
+
 Framework: Flutter
 
 
