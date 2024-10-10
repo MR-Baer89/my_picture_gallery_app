@@ -20,6 +20,7 @@ Bildbearbeitung (optional): Bietet grundlegende Bildbearbeitungsfunktionen wie Z
 Technische Details
 
 Programmiersprache: Dart
+
 Framework: Flutter
 
 
