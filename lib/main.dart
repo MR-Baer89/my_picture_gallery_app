@@ -10,10 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Meine Bildergalerie',
+      theme: ThemeData(),
+      darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
-      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+      home: const MyHomePage(),
     );
   }
 }
