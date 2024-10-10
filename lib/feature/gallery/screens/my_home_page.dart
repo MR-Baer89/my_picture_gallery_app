@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_picture_gallery_app/feature/gallery/widgets/gallery_data.dart';
+import 'package:my_picture_gallery_app/feature/gallery/data/gallery_data.dart';
 import 'package:my_picture_gallery_app/feature/gallery/screens/image_gallery.dart';
 import 'package:my_picture_gallery_app/feature/profil/screens/profile_page.dart';
 
@@ -37,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         actions: [
           IconButton(
+            color: Colors.white,
             icon: const Icon(Icons.search),
             onPressed: () {
               showSearch(

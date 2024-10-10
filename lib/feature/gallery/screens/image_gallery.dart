@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_picture_gallery_app/feature/gallery/widgets/gallery_data.dart';
+import 'package:my_picture_gallery_app/feature/gallery/data/gallery_data.dart';
 import 'package:my_picture_gallery_app/feature/gallery/screens/image_detail_page.dart';
 
 class ImageGallery extends StatelessWidget {

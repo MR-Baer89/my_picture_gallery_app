@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_picture_gallery_app/feature/gallery/widgets/gallery_data.dart';
+import 'package:my_picture_gallery_app/feature/gallery/data/gallery_data.dart';
 
 class ImageDetailPage extends StatelessWidget {
   final GalleryItem image;
@@ -10,6 +10,7 @@ class ImageDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: const Color.fromARGB(255, 99, 13, 145),
         title: Text(
           image.imageTitle,
